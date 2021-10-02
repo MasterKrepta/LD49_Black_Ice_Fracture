@@ -7,10 +7,11 @@ public class PlayerMovement : MonoBehaviour
     public Rigidbody rb;
     public Transform car;
     public float speed = 17;
+    
 
 
-    Vector3 rotationRight = new Vector3(0, 30, 0);
-    Vector3 rotationLeft = new Vector3(0, -30, 0);
+    Vector3 rotationRight = new Vector3(0, 60, 0);
+    Vector3 rotationLeft = new Vector3(0, -60, 0);
 
     Vector3 forward = new Vector3(0, 0, 1);
     Vector3 backward = new Vector3(0, 0, -1);

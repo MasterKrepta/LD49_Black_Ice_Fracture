@@ -10,6 +10,6 @@ public class BillboardText : MonoBehaviour
     void Update()
     {
         transform.LookAt(Camera.main.transform);
-        transform.rotation = Camera.main.transform.rotation;
+        //transform.rotation = Camera.main.transform.rotation;
     }
 }

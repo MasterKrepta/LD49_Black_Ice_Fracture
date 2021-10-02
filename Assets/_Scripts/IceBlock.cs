@@ -12,6 +12,7 @@ public class IceBlock : MonoBehaviour
     Material material;
     public int MaxValue;
 
+    public GameObject numberLabel;
 
     private void OnEnable()
     {
@@ -28,6 +29,17 @@ public class IceBlock : MonoBehaviour
         _remainingValue = MaxValue;
         material = GetComponent<Renderer>().material;
         SetColor();
+        
+    }
+
+    private void Start()
+    {
+        CreateLabel();
+    }
+    private void CreateLabel()
+    {
+        var lbl = Instantiate(numberLabel, transform.position, Quaternion.identity, transform);
+        lbl.GetComponent<RectTransform>().position = new Vector3(transform.position.x, 0.25f , transform.position.z);
     }
 
     private void SetColor()
