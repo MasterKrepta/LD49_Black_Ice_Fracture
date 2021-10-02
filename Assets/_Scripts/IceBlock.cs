@@ -8,7 +8,7 @@ public class IceBlock : MonoBehaviour
     [SerializeField]
     private int _remainingValue;
     public Action OnValueChange;
-    public Color WarningColor, BreakColor;
+    public Color WarningColor, BreakColor, WarningFresnel, breakFresnel;
     Material material;
     public int MaxValue;
 
@@ -77,11 +77,13 @@ public class IceBlock : MonoBehaviour
     void SetWarningColor()
     {
         material.SetColor("IceColor", WarningColor);
+        material.SetColor("FresnelColor", WarningFresnel);
     }
 
     void SetAboutToBreakColor()
     {
         material.SetColor("IceColor", BreakColor);
+        material.SetColor("FresnelColor", breakFresnel);
     }
 
 }

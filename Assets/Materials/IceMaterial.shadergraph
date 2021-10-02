@@ -2022,10 +2022,10 @@
     "m_Guid": {
         "m_GuidSerialized": "576030e2-f0ac-4f62-989f-bee4a3e4a869"
     },
-    "m_Name": "Fresnel Color",
+    "m_Name": "FresnelColor",
     "m_DefaultRefNameVersion": 1,
-    "m_RefNameGeneratedByDisplayName": "Fresnel Color",
-    "m_DefaultReferenceName": "Fresnel_Color",
+    "m_RefNameGeneratedByDisplayName": "FresnelColor",
+    "m_DefaultReferenceName": "FresnelColor",
     "m_OverrideReferenceName": "",
     "m_GeneratePropertyBlock": true,
     "m_Precision": 0,
@@ -2978,7 +2978,7 @@
     "m_Type": "UnityEditor.ShaderGraph.Vector4MaterialSlot",
     "m_ObjectId": "d204cb976912431b9fb08a44b6f10b6b",
     "m_Id": 0,
-    "m_DisplayName": "Fresnel Color",
+    "m_DisplayName": "FresnelColor",
     "m_SlotType": 1,
     "m_Hidden": false,
     "m_ShaderOutputName": "Out",
