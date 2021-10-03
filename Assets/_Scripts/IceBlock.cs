@@ -44,13 +44,14 @@ public class IceBlock : MonoBehaviour
 
     private void SetColor()
     {
-        if (RemainingValue <= 2)
+        if (RemainingValue <= 3)
         {
             SetWarningColor();
         }
 
         if (RemainingValue == 1)
         {
+            //InvokeRepeating("PulseColor", 1, 0.5f);
             SetAboutToBreakColor();
         }
     }
@@ -75,11 +76,7 @@ public class IceBlock : MonoBehaviour
         //todo play death animations
         Destroy(gameObject);
     }
-
-    
-    
-
-    
+        
     public void ReduceValue(int dmg)
     {
         //TODO change color when it gets down to the last 3? or so
@@ -96,6 +93,12 @@ public class IceBlock : MonoBehaviour
     {
         material.SetColor("IceColor", BreakColor);
         material.SetColor("FresnelColor", breakFresnel);
+    }
+
+    void PulseColor()
+    {
+        //Color.Lerp(material.SetColor("IceColor", WarningColor), material.SetColor("IceColor", BreakColor), 0.5f);
+        
     }
 
 }

@@ -1,12 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Base : MonoBehaviour
 {
     public int itemCount = 0;
     public int WinningTotal = 3;
     public List<Transform> StagingPoints = new List<Transform>();
+
+    public int CurrentLevel;
 
 
     private void Awake()
@@ -15,6 +18,8 @@ public class Base : MonoBehaviour
         {
             StagingPoints.Add(child);
         }
+
+        CurrentLevel = SceneManager.GetActiveScene().buildIndex;
 
         
     }
@@ -40,6 +45,7 @@ public class Base : MonoBehaviour
 
         if (itemCount >= WinningTotal )
         {
+            SceneManager.LoadScene(++CurrentLevel);
             //TODO LoadNextLevel
         }
     }

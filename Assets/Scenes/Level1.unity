@@ -985,7 +985,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 828826219}
   car: {fileID: 828826217}
-  speed: 1
+  speed: 3
 --- !u!1001 &917244918
 PrefabInstance:
   m_ObjectHideFlags: 0
