@@ -42,6 +42,7 @@ public class Base : MonoBehaviour
         
         pickup.tag = "Untagged";
         PlayerMovement.canCarry = true;
+        TriggerBlock.DecreaseWeight();
 
         if (itemCount >= WinningTotal )
         {

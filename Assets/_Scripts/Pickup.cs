@@ -18,6 +18,7 @@ public class Pickup : MonoBehaviour
             PlayerMovement.canCarry = false;
             transform.position = pickupPoint.position;
             transform.SetParent(pickupPoint.transform);
+            TriggerBlock.IncreaseWeight();
         }
     }
 }

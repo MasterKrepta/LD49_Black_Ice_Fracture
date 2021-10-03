@@ -15,6 +15,8 @@ public class UpdateIceBlockValue : MonoBehaviour
         block.OnValueChange += ChangeValue;
         text = GetComponent<TMP_Text>();
         player = FindObjectOfType<PlayerController>();
+        transform.rotation = Camera.main.transform.rotation;
+        
     }
 
 

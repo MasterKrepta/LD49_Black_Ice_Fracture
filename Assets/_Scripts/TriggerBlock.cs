@@ -5,7 +5,7 @@ using UnityEngine;
 public class TriggerBlock : MonoBehaviour
 {
 
-    public int weight = 1;
+    public static int weight = 1;
 
     
     private void OnTriggerEnter(Collider other)
@@ -16,5 +16,13 @@ public class TriggerBlock : MonoBehaviour
         }
     }
 
-    
+    public static void IncreaseWeight()
+    {
+        weight++;
+    }
+
+    public static void DecreaseWeight()
+    {
+        weight--;
+    }
 }
