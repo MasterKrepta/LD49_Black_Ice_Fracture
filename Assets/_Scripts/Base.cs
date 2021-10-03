@@ -8,13 +8,14 @@ public class Base : MonoBehaviour
     public int itemCount = 0;
     public int WinningTotal = 3;
     public List<Transform> StagingPoints = new List<Transform>();
+    public Transform droppointParent;
 
     public int CurrentLevel;
 
 
     private void Awake()
     {
-        foreach (Transform child in transform)
+        foreach (Transform child in droppointParent)
         {
             StagingPoints.Add(child);
         }
@@ -35,10 +36,11 @@ public class Base : MonoBehaviour
 
     void DeliverItem(GameObject pickup)
     {
+        GetComponent<AudioSource>().Play();
         itemCount++;
-
+        pickup.transform.eulerAngles = Vector3.zero;
         pickup.transform.SetParent(StagingPoints[itemCount - 1]);
-        pickup.transform.localPosition = new Vector3(0, -4 ,0);
+        pickup.transform.localPosition = new Vector3(-0.0006f, 0 ,0.0238f);
         
         pickup.tag = "Untagged";
         PlayerMovement.canCarry = true;

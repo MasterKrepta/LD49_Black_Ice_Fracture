@@ -25,7 +25,7 @@ public class Killbox : MonoBehaviour
     IEnumerator Reboot()
     {
         Reloading.SetActive(true);
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(3.5f);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }

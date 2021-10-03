@@ -14,6 +14,11 @@ public class IceBlock : MonoBehaviour
 
     public GameObject numberLabel;
 
+    AudioSource audio;
+    public AudioClip[] cracks;
+
+
+
     private void OnEnable()
     {
         OnValueChange += SetColor;
@@ -26,9 +31,10 @@ public class IceBlock : MonoBehaviour
 
     void Awake()
     {
+        audio = GetComponent<AudioSource>();
         _remainingValue = MaxValue;
         material = GetComponent<Renderer>().material;
-        SetColor();
+        InitColors();
         
     }
 
@@ -42,6 +48,22 @@ public class IceBlock : MonoBehaviour
         lbl.GetComponent<RectTransform>().position = new Vector3(transform.position.x, 0.25f , transform.position.z);
     }
 
+
+    void InitColors()
+    {
+        if (RemainingValue <= 3)
+        {
+            material.SetColor("IceColor", WarningColor);
+            material.SetColor("FresnelColor", WarningFresnel);
+        }
+
+        if (RemainingValue == 1)
+        {
+            material.SetColor("IceColor", BreakColor);
+            material.SetColor("FresnelColor", breakFresnel);
+        }
+        
+    }
     private void SetColor()
     {
         if (RemainingValue <= 3)
@@ -53,6 +75,10 @@ public class IceBlock : MonoBehaviour
         {
             //InvokeRepeating("PulseColor", 1, 0.5f);
             SetAboutToBreakColor();
+        } else
+        {
+            audio.clip = cracks[0];
+            audio.Play();
         }
     }
 
@@ -79,20 +105,25 @@ public class IceBlock : MonoBehaviour
         
     public void ReduceValue(int dmg)
     {
-        //TODO change color when it gets down to the last 3? or so
         RemainingValue -= dmg;
     }
 
     void SetWarningColor()
     {
+        audio.clip = cracks[1];
+        audio.Play();
         material.SetColor("IceColor", WarningColor);
         material.SetColor("FresnelColor", WarningFresnel);
+        
     }
 
     void SetAboutToBreakColor()
     {
+        audio.clip = cracks[2];
+        audio.Play();
         material.SetColor("IceColor", BreakColor);
         material.SetColor("FresnelColor", breakFresnel);
+        
     }
 
     void PulseColor()

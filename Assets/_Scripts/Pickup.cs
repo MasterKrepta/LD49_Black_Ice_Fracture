@@ -17,6 +17,7 @@ public class Pickup : MonoBehaviour
         {
             PlayerMovement.canCarry = false;
             transform.position = pickupPoint.position;
+            transform.eulerAngles = Vector3.zero;
             transform.SetParent(pickupPoint.transform);
             TriggerBlock.IncreaseWeight();
         }
