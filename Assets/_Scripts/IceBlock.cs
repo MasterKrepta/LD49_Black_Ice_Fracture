@@ -66,12 +66,12 @@ public class IceBlock : MonoBehaviour
     }
     private void SetColor()
     {
-        if (RemainingValue <= 3)
+        if (RemainingValue <= 4)
         {
             SetWarningColor();
         }
 
-        if (RemainingValue == 1)
+        if (RemainingValue <= 2)
         {
             //InvokeRepeating("PulseColor", 1, 0.5f);
             SetAboutToBreakColor();
