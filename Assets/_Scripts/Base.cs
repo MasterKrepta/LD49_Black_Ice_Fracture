@@ -29,6 +29,7 @@ public class Base : MonoBehaviour
     {
         if (other.tag == "Pickup")
         {
+            
             DeliverItem(other.gameObject);
         }
     }
@@ -36,6 +37,7 @@ public class Base : MonoBehaviour
 
     void DeliverItem(GameObject pickup)
     {
+        
         GetComponent<AudioSource>().Play();
         itemCount++;
         pickup.transform.eulerAngles = Vector3.zero;

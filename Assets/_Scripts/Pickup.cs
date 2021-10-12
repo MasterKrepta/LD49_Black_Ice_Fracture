@@ -13,7 +13,7 @@ public class Pickup : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Player" && PlayerMovement.canCarry)
+        if (other.tag == "Player" && PlayerMovement.canCarry && this.tag =="Pickup")
         {
             PlayerMovement.canCarry = false;
             transform.position = pickupPoint.position;
